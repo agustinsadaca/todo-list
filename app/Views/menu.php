@@ -10,7 +10,9 @@ body{
  .navbar {
   overflow: hidden;
   background-color: #f19f3c;
-  display: block !important; padding: 0 !important;
+  border-collapse: collapse;
+  width: 100%; 
+
 }
 
 /* Navigation links */

@@ -60,7 +60,7 @@ if (isset($data['output'])) {
 
 }
 th[aria-label="Completed: activate to sort column descending"],[aria-label="Completed: activate to sort column ascending"]{
-    width: 5% !important;
+    width: 5% ;
 }
 .folder{
     display:flex;
@@ -94,6 +94,11 @@ th[aria-label="Completed: activate to sort column descending"],[aria-label="Comp
 }
 .datatables div.form-div textarea:hover, .datatables div.form-div textarea:focus, .datatables div.form-div input[type="text"]:hover, .datatables div.form-div input[type="text"]:focus, .datatables div.form-div select:hover, .datatables div.form-div select:focus{
     width: 290px;
+}
+@media only screen and (max-width : 550px) {
+    th[aria-label="Completed: activate to sort column descending"],[aria-label="Completed: activate to sort column ascending"]{
+    width: 10px !important;
+}
 }
 </style>
 <script>
