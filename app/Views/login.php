@@ -11,11 +11,11 @@
   
 
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="<?php echo(base_url().'/AdminLTE-3.1.0-rc/pages/examples/../../plugins/fontawesome-free/css/all.min.css')?>"> 
+  <link rel="stylesheet" href="<?php echo(base_url().'/all.min.css')?>"> 
   <!-- icheck bootstrap -->
-  <link rel="stylesheet" href="<?php echo(base_url().'/AdminLTE-3.1.0-rc/pages/examples/../../plugins/icheck-bootstrap/icheck-bootstrap.min.css')?>"> 
+  <link rel="stylesheet" href="<?php echo(base_url().'/icheck-bootstrap.min.css')?>"> 
   <!-- Theme style -->
-  <link rel="stylesheet" href="<?php echo(base_url().'/AdminLTE-3.1.0-rc/pages/examples/../../dist/css/adminlte.min.css')?>"> 
+  <link rel="stylesheet" href="<?php echo(base_url().'/adminlte.min.css')?>"> 
 
 </head>
 <body class="hold-transition login-page">
