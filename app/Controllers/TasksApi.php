@@ -13,6 +13,7 @@ class TasksApi extends AdminLayout{
 		$taks_get = new TaskModelApi();
 		$result =  $taks_get->getTask();
 		$result = json_encode($result);
+		echo "<pre>";
 		return $result;
 
 	}

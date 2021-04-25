@@ -55,6 +55,10 @@ class TaskList extends AdminLayout
         	{
             $crud->fieldType('id_folder', 'hidden'); 
 			}
+			if ($crud->getState() == 'edit') 
+        	{
+            $crud->fieldType('id_folder', 'hidden'); 
+			}
 		}else{
 			$crud->setRelation('id_folder', 'a_folder_task', 'name');
 
