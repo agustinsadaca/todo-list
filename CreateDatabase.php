@@ -1,50 +1,17 @@
 <?php
-   include_once('Mysqldump.php');
- 
-    class GenerateBackup
-    {
-        private $dbname = 'wofa_wofa_back';
-        private $host = 'localhost';
-        private $user = 'c2140416_qwe';
-        private $pass = 'papi87NOpu';
-        private $downloadRoute = './bkBD';
-        private $fileName = 'backup.sql';
-        private $uniqueFileName = true;
-    
-        function generateDump()
-        {
 
-            $finalRouteFile = $this->getFinalRouteFile($this->downloadRoute,  $this->fileName, $this->uniqueFileName);
+    include_once('Mysqldump.php');
 
-            $dump = new Ifsnop\Mysqldump\Mysqldump(
-                "mysql:host=$this->host;dbname=$this->dbname",
-                $this->user, 
-                $this->pass, 
-                []//['compress' => 'Gzip']
-            );
 
-            
-            $dump->start( $finalRouteFile );
-        }
-
-        function getFinalRouteFile($downloadRoute, $fileName, $uniqueFileName)
-        {
-
-            $finalRouteFile = $downloadRoute . $fileName;
-
-            if($uniqueFileName)
-            {
-                $aux_finalRoute = explode('.', $finalRouteFile);
-                $last_index = count($aux_finalRoute )-1;
-                $extension = $aux_finalRoute[$last_index];
-                unset($aux_finalRoute[$last_index]);
-                $aux_finalRoute = implode('.', $aux_finalRoute);
-                $finalRouteFile = $aux_finalRoute . date("YmdHis") . '.' .$extension;
-            }
-
-            return $finalRouteFile;
-        }
+    $sql = mysqli_connect('localhost', 'root', '', '');
+    if(!$sql){
+            echo "Error: No se pudo conectar a MySQL." . PHP_EOL;
+            echo "errno de depuración: " . mysqli_connect_errno() . PHP_EOL;
+            echo "error de depuración: " . mysqli_connect_error() . PHP_EOL;
+            exit;
     }
+    $sqlSource = file_get_contents('todo.sql');
 
-    $generateBackup = new GenerateBackup();
-    $generateBackup->generateDump();
+    mysqli_multi_query($sql,$sqlSource);
+
+    ?>
